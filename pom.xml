@@ -94,18 +94,12 @@
             </roles>
         </developer>
     </developers>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>jvnet-nexus-snapshots</id>
-            <name>Java.net Nexus Snapshots Repository</name>
-            <url>https://maven.java.net/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>jvnet-nexus-staging</id>
-            <name>Java.net Nexus Staging Repository</name>
-            <url>https://maven.java.net/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
+  <distributionManagement>
+    <repository>
+      <id>servlet-spec</id>
+      <url>https://maven.pkg.github.com/eureka-bpo/servlet-spec</url>
+    </repository>
+  </distributionManagement>
 
     <organization>
         <name>GlassFish Community</name>
@@ -186,6 +180,9 @@
                 <configuration>
                     <archive>
                         <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                        <manifestEntries>
+                            <mode>fake</mode>
+                        </manifestEntries>
                     </archive>
                     <excludes>
                         <exclude>**/*.java</exclude>
